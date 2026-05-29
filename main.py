@@ -1,27 +1,46 @@
-
 Web VPython 3.2
 import random
-
-box(size=vec(100,100,100), opacity=0.1, color=color.cyan)
-
-cu=curve(pos=[vec(- 1, 0, 0),vec(0, 0, - 1), vec(1, 0, 0), vec(0,0,1), vec(-1, 0, 0)])
-b=box(pos=vec(random.uniform(-5,5),0,random.uniform(-5,5)),color=color.yellow)
-
-
-h= helix(pos=vec(random.uniform(-10,10),random.uniform(-10,10),random.uniform(-10,10)), color=color.yellow)
-cy=cylinder(pos=vec(random.uniform(-10,10),random.uniform(-10,10),random.uniform(-10,10)))
+n=0
+boxes = []
+curves=[]
+helixes=[]
+cylinders=[]
+cones=[]
+rings=[]
 
 
-cn=cone(pos=vec(random.uniform(-1,1),random.uniform(-1,1),random.uniform(-1,1)))
-r=ring(pos=vec(random.uniform(-1,1),random.uniform(-1,1),random.uniform(-1,1)), color=color.yellow)
+while n<50:
+    
+
+    curves.append(curve(pos=vec(random.uniform(-10,10),random.uniform(-10,10),random.uniform(-10,10)), pos=[vec(- 1, 0, 0),vec(0, 0, - 1), vec(1, 0, 0), vec(0,0,1), vec(-1, 0, 0)]))
+    boxes.append(box(pos=vec(random.uniform(-10,10),random.uniform(-10,10),random.uniform(-10,10)),color=color.yellow))
 
 
+    helixes.append(helix(pos=vec(random.uniform(-10,10),random.uniform(-10,10),random.uniform(-10,10)), color=color.yellow))
+    cylinders.append (cylinder(pos=vec(random.uniform(-10,10),random.uniform(-10,10),random.uniform(-10,10) )))
 
 
+    cones.append(cone(pos=vec(random.uniform(-10,10),random.uniform(-10,10),random.uniform(-10,10))))
+    rings.append(ring(pos=vec(random.uniform(-10,10),random.uniform(-10,10),random.uniform(-10,10)), color=color.yellow))
+    
+    n=n+1
 
-
-while True : 
+while True :
     rate(100)
     k = keysdown()
     if ' ' in k :
+        for bx in boxes :
+            bx.pos.x = bx.pos.x + random.uniform(-1,1)
+            bx.pos.y = bx.pos.y + random.uniform(-1,1)
+            bx.pos.z = bx.pos.z + random.uniform(-1,1) 
+        for cu in curves:
+        
+        for cu in curves:
+            
+        for cu in curves:
+            
+        for cu in curves:
+            
+        for cu in curves:
+            
         
