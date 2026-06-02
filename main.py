@@ -1,6 +1,10 @@
 Web VPython 3.2
 import random
 n=0
+bp=0
+hc=0
+cr=0
+
 boxes = []
 helixes=[]
 cylinders=[]
@@ -8,7 +12,7 @@ cones=[]
 rings=[]
 pyramids=[]
 
-while n<50:
+while n<100:
     
     pyramids.append(pyramid(pos=vec(random.uniform(-10,10),random.uniform(-10,10),random.uniform(-10,10))))
     boxes.append(box(pos=vec(random.uniform(-10,10),random.uniform(-10,10),random.uniform(-10,10)),color=color.yellow))
@@ -57,5 +61,70 @@ while True :
             ri.pos.x = ri.pos.x + random.uniform(-1,1)
             ri.pos.y = ri.pos.y + random.uniform(-1,1)
             ri.pos.z = ri.pos.z + random.uniform(-1,1) 
+
+        for bx in boxes:
+            for py in pyramids:
+                if py.opacity>0:
+                    if abs(bx.pos.x-py.pos.x) + abs(bx.pos.y-py.pos.y) + abs(bx.pos.z-py.pos.z) < 2:
+                        py.opacity=0
+                        pyramids.remove(py)
+                    
+                        bp=bp+1
+                    
+        for he in helixes :
+            for cy in cylinders :
+                if cy.opacity>0:
+                    if abs(he.pos.x-cy.pos.x) + abs(he.pos.y-cy.pos.y) + abs(he.pos.z-cy.pos.z) < 2:
+                        cy.opacity=0
+                        cylinders.remove(cy)
+                    
+                        hc=hc+1
+
+
+        for co in cones :
+            for ri in rings :
+                if co.opacity>0:
+                    if abs(co.pos.x-ri.pos.x) + abs(co.pos.y-ri.pos.y) + abs(co.pos.z-ri.pos.z) < 2:
+                        co.opacity=0
+                        cones.remove(co)
+                    
+                        cr=cr+1            
+                    
         
+
+    if 'a' in k :
+        print("효소1:", bp)
+        print("효소2:", hc)
+        print("효소3:", cr)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  
