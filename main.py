@@ -12,7 +12,7 @@ cones=[]
 rings=[]
 pyramids=[]
 
-while n<100:
+while n<101:
     
     pyramids.append(pyramid(pos=vec(random.uniform(-10,10),random.uniform(-10,10),random.uniform(-10,10))))
     boxes.append(box(pos=vec(random.uniform(-10,10),random.uniform(-10,10),random.uniform(-10,10)),color=color.yellow))
